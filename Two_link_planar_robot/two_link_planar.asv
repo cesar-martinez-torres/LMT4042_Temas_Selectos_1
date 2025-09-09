@@ -1,9 +1,0 @@
-%% Two Link Planar Robot Kinematic Model
-% Orientate correctly the links
-% Sizes (meters)
-L1_X=1
-L1_Y=1
-L1_Z=1
-L1_density=2700
-L1_color=[1 0 0]
-% Secon link
