@@ -1,5 +1,4 @@
 %% Cubic trajectory for Revolute Joint
-clear; clc;
 
 % ===== Parameters =====
 tf = 1500;       % number of points
@@ -9,7 +8,7 @@ T  = 30;         % TOTAL DURATION in seconds
 t = linspace(0, T, tf)';     % [tf x 1]
 
 % ===== Boundary conditions =====
-xd  = 45;                    % desired final position (degrees)
+xd  = 0;                    % desired final position (degrees)
 xpd = 0;                     % desired final velocity (degrees/s) -> we will use rad/s = 0
 a0  = 0;                     % initial position condition (rad)
 a1  = 0;                     % initial velocity condition (rad/s)
