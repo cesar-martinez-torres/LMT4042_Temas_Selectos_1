@@ -1,16 +1,16 @@
 %% Cubic trajectory for Revolute Joint
 
 % ===== Parameters =====
-tf = 1500;       % number of points
-T  = 30;         % TOTAL DURATION in seconds
-
+tf = 2500;       % number of points
+T  = 20;         % TOTAL DURATION in seconds
+to=10;
 % Time vector in seconds (column) with 'tf' samples from 0 to T
-t = linspace(0, T, tf)';     % [tf x 1]
+t = linspace(to, T, tf)';     % [tf x 1]
 
 % ===== Boundary conditions =====
 xd  = 0;                    % desired final position (degrees)
 xpd = 0;                     % desired final velocity (degrees/s) -> we will use rad/s = 0
-a0  = 0;                     % initial position condition (rad)
+a0  = deg2rad(-55);                     % initial position condition (rad)
 a1  = 0;                     % initial velocity condition (rad/s)
 
 qf  = deg2rad(xd);           % convert to rad
@@ -34,7 +34,7 @@ q  = a0 + a1*t + a2*t.^2 + a3*t.^3;         % position [rad] (tf x 1)
 dq = a1 + 2*a2*t + 3*a3*t.^2;               % velocity [rad/s] (tf x 1)
 
 % Signal for From Workspace (matrix [time, data])
-path = [t q];    % <- Use 'path' in the From Workspace block
+path2 = [t q];    % <- Use 'path' in the From Workspace block
 
 % ===== Quick plots =====
 figure('Name','Trajectories in th1','NumberTitle','off');
